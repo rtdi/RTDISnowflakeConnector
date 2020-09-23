@@ -1,19 +1,19 @@
-# RTDI Big Data HanaCloudConnector 
+# RTDI Big Data SnowflakeConnector 
 
-_Load data from Kafka topics based on their (nested) schema into a relational model of Hana Cloud_
+_Take data from a topic (different schemas are supported) and load the (nested) data into relational tables of Snowflake. The VARIANT column is not used._
 
-Source code available here: [github](https://github.com/rtdi/RTDIHanaCloudConnector)
+Source code available here: [github](https://github.com/rtdi/RTDISnowflakeConnector)
 
 
 ## Installation and testing
 
 On any computer install the Docker Daemon - if it is not already - and download this docker image with
 
-    docker pull rtdi/s4hanaconnector
+    docker pull rtdi/snowflakeloader
 
 Then start the image via docker run. For a quick test this command is sufficient
 
-    docker run -d -p 80:8080 --rm --name hanacloudconnector  rtdi/hanacloudconnector
+    docker run -d -p 80:8080 --rm --name snowflakeloader  rtdi/snowflakeloader
 
 to expose a webserver at port 80 on the host running the container. Make sure to open the web page via the http prefix, as https needs more configuration.
 For example [http://localhost:80/](http://localhost:80/) might do the trick of the container is hosted on the same computer.
@@ -23,7 +23,7 @@ The default login for this startup method is: **rtdi / rtdi!io**
 The probably better start command is to mount two host directories into the container. In this example the host's /data/files contains all files to be loaded into Kafka and the /data/config is an (initially) empty directory where all settings made when configuring the connector will be stored permanently.
 
     docker run -d -p 80:8080 --rm -v /data/files:/data/ -v /data/config:/usr/local/tomcat/conf/security \
-        --name hanacloudconnector  rtdi/hanacloudconnector
+        --name snowflakeloader  rtdi/snowflakeloader
 
 
 For proper start commands, especially https and security related, see the [ConnectorRootApp](https://github.com/rtdi/ConnectorRootApp) project, this application is based on.
