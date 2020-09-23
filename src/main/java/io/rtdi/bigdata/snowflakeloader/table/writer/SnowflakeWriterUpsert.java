@@ -303,7 +303,11 @@ public class SnowflakeWriterUpsert extends SnowflakeRootTableStatement {
 		}
 
 		public void setObject(int pos, Object value) throws SQLException {
-			stmt.setObject(pos, value);
+			if (value instanceof byte[]) {
+				stmt.setObject(pos, null);
+			} else {
+				stmt.setObject(pos, value);
+			}
 		}
 
 	}
