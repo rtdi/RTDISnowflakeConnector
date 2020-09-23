@@ -16,7 +16,6 @@ import io.rtdi.bigdata.snowflakeloader.table.SnowflakeRootTable;
 import io.rtdi.bigdata.snowflakeloader.table.SnowflakeTable;
 import io.rtdi.bigdata.snowflakeloader.table.column.ArrayColumn;
 import io.rtdi.bigdata.snowflakeloader.table.column.Column;
-import io.rtdi.bigdata.snowflakeloader.table.column.ColumnPK;
 
 public class SnowflakeWriterUpsert extends SnowflakeRootTableStatement {
 	private Map<String, StatementData> childtableinsert;
@@ -135,7 +134,7 @@ public class SnowflakeWriterUpsert extends SnowflakeRootTableStatement {
 		}
 	}
 
-	private void deletedata(JexlRecord record) throws ConnectorCallerException {
+	/* private void deletedata(JexlRecord record) throws ConnectorCallerException {
 		try {
 			int pos = 1;
 			for (Column col : getWriter().getPrimaryKeys()) {
@@ -171,7 +170,7 @@ public class SnowflakeWriterUpsert extends SnowflakeRootTableStatement {
 						null);
 			}
 		}
-	}
+	} */
 
 	@Override
 	protected RowType getRowType() {
