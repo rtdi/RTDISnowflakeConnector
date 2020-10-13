@@ -1,8 +1,8 @@
-# RTDI Big Data SnowflakeConnector 
+# Snowflake Loader 
 
 _Take data from a topic (different schemas are supported) and load the (nested) data into relational tables of Snowflake. The VARIANT column is not used._
 
-Source code available here: [github](https://github.com/rtdi/RTDISnowflakeConnector)
+Source code available here: [github](https://github.com/rtdi/SnowflakeLoader)
 
 
 ## Installation and testing
@@ -34,22 +34,12 @@ For proper start commands, especially https and security related, see the [Conne
 
 The first step is to connect the application to a Kafka server, in this example Confluent Cloud.
 
-<img src="https://github.com/rtdi/RTDIHanaCloudConnector/raw/master/docs/media/RTDIHanaCloudConnector-PipelineConfig.png" width="50%">
+<img src="https://github.com/rtdi/SnowflakeLoader/raw/master/docs/media/SnowflakeLoader-PipelineConfig.png" width="50%">
 
 
 ### Define a Connection
 
-A Connection holds all information about the Hana cloud database connection.
-The database user should be a new user which has the permission to create new tables, which will be derived from the message schema.
-
-Clicking on the Add icon allows opens the setting dialog
-
-<img src="https://github.com/rtdi/S4HanaConnector/raw/master/docs/media/RTDIHanaCloudConnector-connectionadd.png" width="50%">
-
-The JDBCURL for a Hana database is usually in the format jdbc:sap://<hostname>:3<instance number>15/<database container>, e.g. jdbc:sap://dbhost:39015/HXE.
-The source database schema is the Hana schema name where all SAP tables can be found.
-
-<img src="https://github.com/rtdi/S4HanaConnector/raw/master/docs/media/RTDIHanaCloudConnector-connectiondefine.png" width="50%">
+A Connection holds all information about the connection to the Snowflake instance.
 
 
 ### Define the consumer
