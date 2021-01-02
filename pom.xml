@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.rtdi.bigdata.connector</groupId>
 	<artifactId>snowflakeloader</artifactId>
-	<version>0.7.4</version>
+	<version>0.7.6</version>
 	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<io.rtdi.bigdata.connector.version>0.9.37</io.rtdi.bigdata.connector.version>
+		<io.rtdi.bigdata.connector.version>0.10.1</io.rtdi.bigdata.connector.version>
 	</properties>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>net.snowflake</groupId>
 			<artifactId>snowflake-jdbc</artifactId>
-			<version>3.12.10</version>
+			<version>3.12.16</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -54,10 +54,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>4.0.1</version>
-			<scope>provided</scope>
+		  <groupId>jakarta.servlet</groupId>
+		  <artifactId>jakarta.servlet-api</artifactId>
+		  <version>5.0.0</version>
+		  <scope>provided</scope>
 		</dependency>
 	</dependencies>
 </project>

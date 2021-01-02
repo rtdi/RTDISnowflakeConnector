@@ -1,5 +1,7 @@
 # Snowflake Loader 
 
+ATTENTION: PoC only!! It is not supposed to be used unless the limitations are clearly understood!
+
 _Take data from a topic (different schemas are supported) and load the (nested) data into relational tables of Snowflake. The VARIANT column is not used._
 
 Source code available here: [github](https://github.com/rtdi/SnowflakeLoader)
